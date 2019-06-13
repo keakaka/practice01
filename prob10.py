@@ -6,19 +6,14 @@
 #   예제: 입력이 10 이면 30을 출력(2 + 4 + 6 + 8 + 10 = 30 )
 
 num = input('숫자를 입력하세요 : ')
-sum = 0
+mysum = 0
+
 if num.isdigit():
     num = int(num)
-    if num&1 == 0:
-        for i in range(0, num+1):
-            if i & 1 == 0:
-                sum += i
-    else:
-        for i in range(0, num+1):
-            if i & 1 == 1:
-                sum += i
+    for i in range(0, num+1):
+        if num & 1 == 0 and i & 1 == 0 or num & 1 == 1 and i & 1 == 1:
+            mysum += i
 else:
     print('숫자만 입력하세요')
 
-
-print(sum)
+print(mysum)
